@@ -8,12 +8,16 @@ app.get('/', (req, res) => {
 })
 
 // app.get('/:id', (req, res) => {
-    //     res.send(items[req.params.id])
-    // })
-    
-    app.get('/:id', (req, res) => {
-        res.send(`I love ${req.params.id}!`)
-    })
+//     res.send(items[req.params.id])
+// })
+
+/*
+    colon + word means varaible. Whatever comes
+    after the colon will be the request parameter's "id"
+*/
+app.get('/:id', (req, res) => {
+    res.send(`I love ${req.params.id}!`)
+})
     
 const PORT = 1337
 /*
