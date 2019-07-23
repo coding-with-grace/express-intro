@@ -13,9 +13,9 @@ router.get('/', (req, res) => {
             <link rel="stylesheet" href="/style.css" />
           </head>
                 <body>
-                    ${pets.map(pet => `
+                    ${pets.map((pet, index) => `
                         <div class='all-pets'>
-                            <p class='individual-pet'>${pet} has a lovely owner</p>
+                            <p class='individual-pet'>${pet} has a lovely owner named ${owners[index]}.</p>
                         </div>
                     `).join('')}
                 </body>
