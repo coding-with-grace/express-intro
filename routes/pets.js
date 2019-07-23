@@ -4,7 +4,24 @@ const pets = require('../data/pets')
 const owners = require('../data/owners')
 
 router.get('/', (req, res) => {
-    res.send(pets)
+    //res.send(pets)
+    res.send(
+        `
+            <html>
+            <head>
+            <title>Owners and Pets</title>
+            <link rel="stylesheet" href="/style.css" />
+          </head>
+                <body>
+                    ${pets.map(pet => `
+                        <div class='all-pets'>
+                            <p class='individual-pet'>${pet} has a lovely owner</p>
+                        </div>
+                    `).join('')}
+                </body>
+            </html>
+        `
+    )
 })
 
 router.get('/:id', (req, res) => {

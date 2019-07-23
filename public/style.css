@@ -1,3 +1,17 @@
 .love-for-pet {
-    color: green
+    color: green;
+}
+
+.all-pets {
+    display: flex;
+    justify-content: center;
+}
+
+.individual-pet {
+    border-style: solid;
+    border-color: green;
+    margin-bottom: 5px;
+    width: 200px;
+    padding: 5px;
+    text-align: center;
 }
