@@ -1,23 +1,31 @@
 const express = require('express')
 const app = express()
-const items = require('./items')
+// const pets = require('./pets')
 
+app.use(express.static(__dirname + "/public"));
+
+app.use('/pets', require('./routes/pets'))
+app.use('/owners', require('./routes/owners'))
 
 app.get('/', (req, res) => {
-    res.send(items)
+    res.redirect('/pets')
 })
 
-// app.get('/:id', (req, res) => {
-//     res.send(items[req.params.id])
+// app.get('/', (req, res) => {
+//     res.send(pets)
 // })
 
-/*
-    colon + word means varaible. Whatever comes
-    after the colon will be the request parameter's "id"
-*/
-app.get('/:id', (req, res) => {
-    res.send(`I love ${req.params.id}!`)
-})
+// // app.get('/:id', (req, res) => {
+// //     res.send(items[req.params.id])
+// // })
+
+// /*
+//     colon + word means varaible. Whatever comes
+//     after the colon will be the request parameter's "id"
+// */
+// app.get('/:id', (req, res) => {
+//     res.send(`I love ${req.params.id}!`)
+// })
     
 const PORT = 1337
 /*
