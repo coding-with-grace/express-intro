@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 // const pets = require('./pets')
 
+// make all of our files in public directory accessible
 app.use(express.static(__dirname + "/public"));
 
 app.use('/pets', require('./routes/pets'))
@@ -29,7 +30,7 @@ app.get('/', (req, res) => {
     
 const PORT = 1337
 /*
-    when listening on our app, it's 
+    when listening on our app, it's
     a good idea to have callback method to
     show we're actually listening on a port
 */

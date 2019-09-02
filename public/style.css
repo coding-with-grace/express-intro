@@ -4,7 +4,12 @@
 
 .all-pets {
     display: flex;
-    justify-content: center;
+    /*
+        justify-content: center;
+        ^ only for aligning items on a horizontal axis
+    */
+    flex-direction: column;
+    align-items: center; /* align-items is a special flexbox property. align items on a vertical axis */
 }
 
 .individual-pet {

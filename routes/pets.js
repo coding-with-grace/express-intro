@@ -13,11 +13,11 @@ router.get('/', (req, res) => {
             <link rel="stylesheet" href="/style.css" />
           </head>
                 <body>
+                    <div class='all-pets'>
                     ${pets.map((pet, index) => `
-                        <div class='all-pets'>
-                            <p class='individual-pet'>${pet} has a lovely owner named ${owners[index]}.</p>
-                        </div>
-                    `).join('')}
+                    <p class='individual-pet'>${pet} has a lovely owner named ${owners[index]}</p>
+                `).join('')}
+                    </div>
                 </body>
             </html>
         `
@@ -33,7 +33,7 @@ router.get('/:id', (req, res) => {
             <link rel="stylesheet" href="/style.css" />
           </head>
                 <body>
-                    <p class="love-for-pet">${owners[req.params.id - 1] + ' loves ' + pets[req.params.id - 1] + '.'}</p>
+                    <p class="love-for-pet">${owners[req.params.id - 1] + ' loves their pet ' + pets[req.params.id - 1] + '.'}</p>
                 </body>
             </html>
         `
