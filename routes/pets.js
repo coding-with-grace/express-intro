@@ -24,6 +24,8 @@ router.get('/', (req, res) => {
     )
 })
 
+// ^ note: above, we join at end of each element. Otherwise, there will be a comma after each pet / array element
+
 router.get('/:id', (req, res) => {
     res.send(
         `<!DOCTYPE html>
